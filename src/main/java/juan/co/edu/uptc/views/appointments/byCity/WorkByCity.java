@@ -1,9 +1,9 @@
 package juan.co.edu.uptc.views.appointments.byCity;
 
-import uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.views.wildCardClasses.Global;
+import juan.co.edu.uptc.views.appointments.Table;
 import lombok.Getter;
-import uptc.views.appointments.Table;
-import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
 import java.awt.*;

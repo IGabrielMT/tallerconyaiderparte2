@@ -1,6 +1,7 @@
 package juan.co.edu.uptc.presenter;
 
-import uptc.interfaces.Interfaces;
+
+import juan.co.edu.uptc.interfaces.Interfaces;
 
 public class Presenter implements Interfaces.Presenter {
     public Presenter() {

@@ -1,9 +1,10 @@
 package juan.co.edu.uptc.pojos;
- import com.fasterxml.jackson.databind.ObjectMapper;
- import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+ import java.util.List;
 
 
-public class Root {
+public class ElectricVehicles {
 
     public class Approval{
         public int reviewedAt;
@@ -21,7 +22,7 @@ public class Root {
     }
 
     public class ClientContext{
-        public ArrayList<Object> clientContextVariables;
+        public List<Object> clientContextVariables;
         public InheritedVariables inheritedVariables;
     }
 
@@ -33,14 +34,14 @@ public class Root {
         public int position;
         public String renderTypeName;
         public Format format;
-        public ArrayList<String> flags;
+        public List<String> flags;
         public String description;
         public int tableColumnId;
         public ComputationStrategy computationStrategy;
     }
 
     public class ComputationStrategy{
-        public ArrayList<String> source_columns;
+        public List<String> source_columns;
         public String type;
         public Parameters parameters;
     }
@@ -61,14 +62,14 @@ public class Root {
     public class Grant{
         public boolean inherited;
         public String type;
-        public ArrayList<String> flags;
+        public List<String> flags;
     }
 
     public class Identification{
         @JsonProperty("Originator")
         public String originator;
         @JsonProperty("Metadata Language")
-        public String metadata Language;
+        public String metadataLanguage;
     }
 
     public class InheritedVariables{
@@ -86,18 +87,18 @@ public class Root {
     public class Metadata{
         public CustomFields custom_fields;
         public String rowLabel;
-        public ArrayList<String> availableDisplayTypes;
+        public List<String> availableDisplayTypes;
     }
 
-    public class Notes{
+    public class Notes {
         @JsonProperty("1. ")
-        public String _1. ;
+        public String note1;
         @JsonProperty("2. ")
-        public String _2. ;
+        public String note2;
         @JsonProperty("3. ")
-        public String _3. ;
+        public String note3;
         @JsonProperty("4. ")
-        public String _4. ;
+        public String note4;
     }
 
     public class Owner{
@@ -108,7 +109,7 @@ public class Root {
         public String profileImageUrlSmall;
         public String screenName;
         public String type;
-        public ArrayList<String> flags;
+        public List<String> flags;
     }
 
     public class Parameters{
@@ -121,7 +122,7 @@ public class Root {
 
     public class Root{
         public Meta meta;
-        public ArrayList<ArrayList<Object>> data;
+        public List<List<Object>> data;
     }
 
     public class SubmissionDetails{
@@ -146,14 +147,14 @@ public class Root {
         public String profileImageUrlSmall;
         public String screenName;
         public String type;
-        public ArrayList<String> flags;
+        public List<String> flags;
     }
 
     public class Temporal{
         @JsonProperty("Posting Frequency")
-        public String posting Frequency;
+        public String postingFrequency;
         @JsonProperty("Period of Time")
-        public String period of Time;
+        public String periodofTime;
     }
 
     public class View{
@@ -186,17 +187,17 @@ public class Root {
         public int viewCount;
         public int viewLastModified;
         public String viewType;
-        public ArrayList<Approval> approvals;
+        public List<Approval> approvals;
         public ClientContext clientContext;
-        public ArrayList<Column> columns;
-        public ArrayList<Grant> grants;
+        public List<Column> columns;
+        public List<Grant> grants;
         public License license;
         public Metadata metadata;
         public Owner owner;
         public Query query;
-        public ArrayList<String> rights;
+        public List<String> rights;
         public TableAuthor tableAuthor;
-        public ArrayList<String> tags;
-        public ArrayList<String> flags;
+        public List<String> tags;
+        public List<String> flags;
     }
 }

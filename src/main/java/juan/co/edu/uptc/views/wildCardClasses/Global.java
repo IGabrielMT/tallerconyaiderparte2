@@ -31,5 +31,4 @@ public class Global {
             return new Font("serif", Font.PLAIN, 24);
         }
     }
-
 }

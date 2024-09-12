@@ -1,16 +1,17 @@
 package juan.co.edu.uptc.views.appointments.byState;
 
-import uptc.interfaces.Interfaces;
-import uptc.views.mainpage.MainPageFrame;
-import uptc.views.search.SearchMainPage;
-import uptc.views.wildCardClasses.Global;
-import uptc.views.wildCardClasses.LabelHeader;
+
+import juan.co.edu.uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.views.mainpage.MainPageFrame;
+import juan.co.edu.uptc.views.search.SearchMainPage;
+import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
+import juan.co.edu.uptc.views.wildCardClasses.Global;
+import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import  uptc.views.wildCardClasses.*;
 
 public class HeaderByState extends JPanel {
     private final MainPageFrame mainPageFrame;

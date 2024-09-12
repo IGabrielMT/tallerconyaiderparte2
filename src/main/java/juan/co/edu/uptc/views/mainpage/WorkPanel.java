@@ -1,9 +1,10 @@
 package juan.co.edu.uptc.views.mainpage;
 
-import uptc.interfaces.Interfaces;
-import uptc.views.search.SearchMainPage;
-import uptc.views.wildCardClasses.CustomButton;
-import uptc.views.wildCardClasses.Global;
+
+import juan.co.edu.uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.views.search.SearchMainPage;
+import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
+import juan.co.edu.uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
 import java.awt.*;

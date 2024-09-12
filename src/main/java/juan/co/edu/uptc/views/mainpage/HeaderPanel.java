@@ -1,11 +1,10 @@
 package juan.co.edu.uptc.views.mainpage;
 
-
-import uptc.interfaces.Interfaces;
-import uptc.views.appointments.allAppointments.MainAll;
-import uptc.views.wildCardClasses.CustomButton;
-import uptc.views.wildCardClasses.Global;
-import uptc.views.wildCardClasses.LabelHeader;
+import juan.co.edu.uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.views.appointments.allAppointments.MainAll;
+import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
+import juan.co.edu.uptc.views.wildCardClasses.Global;
+import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;

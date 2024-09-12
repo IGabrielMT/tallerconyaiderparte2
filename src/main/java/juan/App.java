@@ -11,8 +11,8 @@ public class App {
 //        Interfaces.Presenter presenter = new Presenter();
 //        mainPageFrame.setPresenter(presenter);
 //        mainPageFrame.start();
-        JSONReader.readJsonFromUrl("https://data.wa.gov/api/views/f6w7-q2d2/rows.json?accessType=DOWNLOAD", String.class);
-        ObjectMapper om = new ObjectMapper();
-        Root root = om.readValue(myJsonString, Root.class);
+//        JSONReader.readJsonFromUrl("https://data.wa.gov/api/views/f6w7-q2d2/rows.json?accessType=DOWNLOAD", String.class);
+//        ObjectMapper om = new ObjectMapper();
+//        Root root = om.readValue(myJsonString, Root.class);
     }
 }

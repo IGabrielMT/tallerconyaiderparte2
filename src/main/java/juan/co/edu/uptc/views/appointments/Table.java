@@ -1,8 +1,7 @@
 package juan.co.edu.uptc.views.appointments;
 
+import juan.co.edu.uptc.views.wildCardClasses.Global;
 import lombok.Getter;
-import uptc.views.wildCardClasses.Global;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;

@@ -1,7 +1,8 @@
-    package juan.co.edu.uptc.views.appointments.allAppointments;
+package juan.co.edu.uptc.views.appointments.allAppointments;
 
-import uptc.interfaces.Interfaces;
-import uptc.views.mainpage.MainPageFrame;
+
+import juan.co.edu.uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.views.mainpage.MainPageFrame;
 
 import javax.swing.*;
 import java.awt.*;

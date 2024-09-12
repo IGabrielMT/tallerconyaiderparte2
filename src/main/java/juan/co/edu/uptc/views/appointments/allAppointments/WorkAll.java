@@ -1,9 +1,11 @@
 package juan.co.edu.uptc.views.appointments.allAppointments;
 
-import uptc.interfaces.Interfaces;
+
+
+import juan.co.edu.uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.views.appointments.Table;
+import juan.co.edu.uptc.views.wildCardClasses.Global;
 import lombok.Getter;
-import uptc.views.appointments.Table;
-import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
 import java.awt.*;

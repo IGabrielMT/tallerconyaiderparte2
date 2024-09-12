@@ -1,6 +1,7 @@
 package juan.co.edu.uptc.views.mainpage;
 
-import uptc.interfaces.Interfaces;
+
+import juan.co.edu.uptc.interfaces.Interfaces;
 
 import javax.swing.*;
 import java.awt.*;

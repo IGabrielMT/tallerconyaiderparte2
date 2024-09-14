@@ -1,11 +1,12 @@
 package juan.co.edu.uptc.pojos;
- import com.fasterxml.jackson.databind.ObjectMapper;
- import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+ import java.util.ArrayList;
 
 
 public class Root {
 
-    public class Approval{
+    public static class Approval{
         public int reviewedAt;
         public boolean reviewedAutomatically;
         public String state;
@@ -20,12 +21,12 @@ public class Root {
         public Submitter submitter;
     }
 
-    public class ClientContext{
+    public static class ClientContext{
         public ArrayList<Object> clientContextVariables;
         public InheritedVariables inheritedVariables;
     }
 
-    public class Column{
+    public static class Column{
         public int id;
         public String name;
         public String dataTypeName;
@@ -39,13 +40,13 @@ public class Root {
         public ComputationStrategy computationStrategy;
     }
 
-    public class ComputationStrategy{
+    public static class ComputationStrategy{
         public ArrayList<String> source_columns;
         public String type;
         public Parameters parameters;
     }
 
-    public class CustomFields{
+    public static class CustomFields{
         @JsonProperty("Temporal")
         public Temporal temporal;
         @JsonProperty("Identification")
@@ -54,27 +55,27 @@ public class Root {
         public Notes notes;
     }
 
-    public class Format{
+    public static class Format{
         public String align;
     }
 
-    public class Grant{
+    public static class Grant{
         public boolean inherited;
         public String type;
         public ArrayList<String> flags;
     }
 
-    public class Identification{
+    public static class Identification{
         @JsonProperty("Originator")
         public String originator;
         @JsonProperty("Metadata Language")
-        public String metadata Language;
+        public String metadataLanguage;
     }
 
-    public class InheritedVariables{
+    public static class InheritedVariables{
     }
 
-    public class License{
+    public static class License{
         public String name;
         public String termsLink;
     }
@@ -89,18 +90,18 @@ public class Root {
         public ArrayList<String> availableDisplayTypes;
     }
 
-    public class Notes{
+    public static class Notes{
         @JsonProperty("1. ")
-        public String _1. ;
+        public String one ;
         @JsonProperty("2. ")
-        public String _2. ;
+        public String two;
         @JsonProperty("3. ")
-        public String _3. ;
+        public String three; ;
         @JsonProperty("4. ")
-        public String _4. ;
+        public String four;
     }
 
-    public class Owner{
+    public static class Owner{
         public String id;
         public String displayName;
         public String profileImageUrlLarge;
@@ -111,34 +112,34 @@ public class Root {
         public ArrayList<String> flags;
     }
 
-    public class Parameters{
+    public static class Parameters{
         public String region;
         public String primary_key;
     }
 
-    public class Query{
+    public static class Query{
     }
 
-    public class Root{
+    public class Root2{
         public Meta meta;
         public ArrayList<ArrayList<Object>> data;
     }
 
-    public class SubmissionDetails{
+    public static class SubmissionDetails{
         public String permissionType;
     }
 
-    public class SubmissionOutcomeApplication{
+    public static class SubmissionOutcomeApplication{
         public int failureCount;
         public String status;
     }
 
-    public class Submitter{
+    public static class Submitter{
         public String id;
         public String displayName;
     }
 
-    public class TableAuthor{
+    public static class TableAuthor{
         public String id;
         public String displayName;
         public String profileImageUrlLarge;
@@ -149,11 +150,11 @@ public class Root {
         public ArrayList<String> flags;
     }
 
-    public class Temporal{
-        @JsonProperty("Posting Frequency")
-        public String posting Frequency;
+    public static class Temporal{
+        @JsonProperty("PostingFrequency")
+        public String postingFrequency;
         @JsonProperty("Period of Time")
-        public String period of Time;
+        public String periodOfTime;
     }
 
     public class View{

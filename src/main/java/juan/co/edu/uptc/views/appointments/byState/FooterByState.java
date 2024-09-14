@@ -1,13 +1,12 @@
 package juan.co.edu.uptc.views.appointments.byState;
 
-
-import uptc.interfaces.Interfaces;
-import uptc.views.appointments.allAppointments.MainAll;
-import uptc.views.appointments.byCity.MainByCity;
-import uptc.views.appointments.byCountry.MainByCountry;
-import uptc.views.mainpage.MainPageFrame;
-import uptc.views.wildCardClasses.Global;
-import uptc.views.wildCardClasses.LabelHeader;
+import juan.co.edu.uptc.views.appointments.allAppointments.MainAll;
+import juan.co.edu.uptc.views.appointments.byCity.MainByCity;
+import juan.co.edu.uptc.views.appointments.byCountry.MainByCountry;
+import juan.co.edu.uptc.views.mainpage.MainPageFrame;
+import juan.co.edu.uptc.views.wildCardClasses.Global;
+import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;
+import juan.co.edu.uptc.interfaces.Interfaces;
 
 import javax.swing.*;
 import java.awt.*;

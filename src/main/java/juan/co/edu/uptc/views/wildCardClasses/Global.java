@@ -13,11 +13,11 @@ public class Global {
     public static Color FOOTER_TEXT_COLOR = new Color(0xFF, 0xFF, 0xFF);
     public static Color BUTTON_BACKGROUND_COLOR = new Color(0x90, 0xC2, 0x79);
     public static Color BUTTON_TEXT_COLOR = new Color(0xFF, 0xFF, 0xFF);
-    public static Font FONT_TEXTS = createCustomFont("/fonts/Archivo-SemiBold.ttf", 20);
-    public static Font FONT_TITLE_NORMAL = createCustomFont("/fonts/Newsreader-VariableFont_opsz,wght.ttf", 36);
-    public static Font BUTTON_FONT = createCustomFont("/fonts/Archivo-SemiBold.ttf", 20);
-    public static Font FONT_TITLE_BIG = createCustomFont("/fonts/Newsreader-VariableFont_opsz,wght.ttf", 84);
-    public static Font FONT_TEXTS_SMALL = createCustomFont("/fonts/Archivo-SemiBold.ttf", 12);
+    public static Font FONT_TEXTS = createCustomFont("src/main/java/juan/co/edu/uptc/fonts/Archivo-SemiBold.ttf", 20);
+    public static Font FONT_TITLE_NORMAL = createCustomFont("juan/fonts/Newsreader-VariableFont_opsz,wght.ttf", 36);
+    public static Font BUTTON_FONT = createCustomFont("src/main/java/juan/co/edu/uptc/fonts/Archivo-SemiBold.ttf", 20);
+    public static Font FONT_TITLE_BIG = createCustomFont("juan/fonts/Newsreader-VariableFont_opsz,wght.ttf", 84);
+    public static Font FONT_TEXTS_SMALL = createCustomFont("src/main/java/juan/co/edu/uptc/fonts/Archivo-SemiBold.ttf", 12);
 
     public static Font createCustomFont(String path, float size) {
         try {

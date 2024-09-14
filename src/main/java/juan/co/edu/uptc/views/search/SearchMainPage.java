@@ -1,8 +1,8 @@
 package juan.co.edu.uptc.views.search;
 
-import uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.interfaces.Interfaces;
 import lombok.Setter;
-import uptc.views.mainpage.MainPageFrame;
+import juan.co.edu.uptc.views.mainpage.MainPageFrame;
 
 import javax.swing.*;
 import java.awt.*;

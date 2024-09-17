@@ -1,10 +1,12 @@
 package juan.co.edu.uptc.pojos;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.ToString;
 
- import java.util.ArrayList;
+import java.util.ArrayList;
 
 
-public class Root {
+@ToString
+public class ElectricVehicles {
 
     public static class Approval{
         public int reviewedAt;

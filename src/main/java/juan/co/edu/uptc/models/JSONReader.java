@@ -6,23 +6,22 @@ import lombok.SneakyThrows;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 
 public class JSONReader {
 
     @SneakyThrows
-    public static <T> T readJsonFromUrl(String urlString, Class<T> clazz) {
-        T result;
-            URI uri = new URI(urlString);
-            HttpURLConnection conn = createConnection(uri);
-            String jsonContent = readResponse(conn);
-            result = parseJson(jsonContent, clazz);
-
-        return result;
+    public static <T> List<T> readJsonFromUrl(String urlString, Type typeOfT) {
+        URI uri = new URI(urlString);
+        HttpURLConnection conn = createConnection(uri);
+        String jsonContent = readResponse(conn);
+        return parseJson(jsonContent, typeOfT);
     }
 
     private static HttpURLConnection createConnection(URI uri) throws Exception {
@@ -48,11 +47,11 @@ public class JSONReader {
         return jsonContent.toString();
     }
 
-    private static <T> T parseJson(String jsonContent, Class<T> clazz) {
+    private static <T> List<T> parseJson(String jsonContent, Type typeOfT) {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
                 .registerTypeAdapter(Period.class, new PeriodAdapter())
                 .create();
-        return gson.fromJson(jsonContent, clazz);
+        return gson.fromJson(jsonContent, typeOfT);
     }
 }

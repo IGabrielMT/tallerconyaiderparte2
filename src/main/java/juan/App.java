@@ -3,6 +3,7 @@ package juan;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import juan.co.edu.uptc.interfaces.Interfaces;
 import juan.co.edu.uptc.models.CreateObjects;
+import juan.co.edu.uptc.models.ListManagerVehicles;
 import juan.co.edu.uptc.models.ReadFromURL;
 import juan.co.edu.uptc.pojos.ElectricVehicle;
 import juan.co.edu.uptc.pojos.Vehicle;
@@ -27,12 +28,12 @@ public class App {
 //            System.out.println(vehicle);
 //        }
         Interfaces.Presenter presenter = new Presenter();
-        Interfaces.Model model = new Model();
+        Interfaces.Model model = new ListManagerVehicles();
 
         presenter.setModel(model);
         model.setPresenter(presenter);
 
-        VetInterface.View view = new MainPageFrame();
+        Interfaces.View view = new MainPageFrame();
         view.setPresenter(presenter);
         presenter.setView(view);
         presenter.start();

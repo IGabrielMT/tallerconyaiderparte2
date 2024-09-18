@@ -1,42 +1,32 @@
 package juan.co.edu.uptc.models;
+
 import juan.co.edu.uptc.pojos.Vehicle;
 
 import java.util.Comparator;
 
-public class VehicleComparator implements Comparator<Vehicle> {
-    @Override
-    public int compare(Vehicle v1, Vehicle v2) {
-        // Comparar por estado
-        int stateComparison = v1.getState().compareTo(v2.getState());
-        if (stateComparison != 0) {
-            return stateComparison;
-        }
+public class VehicleComparator {
 
-        // Comparar por país
-        int countryComparison = v1.getCountry().compareTo(v2.getCountry());
-        if (countryComparison != 0) {
-            return countryComparison;
-        }
+    public static Comparator<Vehicle> byState() {
+        return Comparator.comparing(Vehicle::getState);
+    }
 
-        // Comparar por ciudad
-        int cityComparison = v1.getCity().compareTo(v2.getCity());
-        if (cityComparison != 0) {
-            return cityComparison;
-        }
+    public static Comparator<Vehicle> byCountry() {
+        return Comparator.comparing(Vehicle::getCountry);
+    }
 
-        // Comparar por modelo de vehículo
-        int modelComparison = v1.getModelVehicle().compareTo(v2.getModelVehicle());
-        if (modelComparison != 0) {
-            return modelComparison;
-        }
+    public static Comparator<Vehicle> byCity() {
+        return Comparator.comparing(Vehicle::getCity);
+    }
 
-        // Comparar por fabricante
-        int manufacturerComparison = v1.getManufacturer().compareTo(v2.getManufacturer());
-        if (manufacturerComparison != 0) {
-            return manufacturerComparison;
-        }
+    public static Comparator<Vehicle> byModelVehicle() {
+        return Comparator.comparing(Vehicle::getModelVehicle);
+    }
 
-        // Comparar por rango eléctrico
-        return v1.getElectricRange().compareTo(v2.getElectricRange());
+    public static Comparator<Vehicle> byManufacturer() {
+        return Comparator.comparing(Vehicle::getManufacturer);
+    }
+
+    public static Comparator<Vehicle> byElectricRange() {
+        return Comparator.comparing(Vehicle::getElectricRange);
     }
 }

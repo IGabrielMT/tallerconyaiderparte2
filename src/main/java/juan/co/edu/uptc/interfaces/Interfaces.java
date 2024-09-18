@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface Interfaces {
     interface Model {
-        List<Vehicle> ListByCountry();
+        List<Vehicle> ListByCountry_byState();
+        List<Vehicle> ListByCountry_byCountryQuantity();
         List<Vehicle> ListByState();
         List<Vehicle> ListByCity();
         void setPresenter(Presenter presenter);

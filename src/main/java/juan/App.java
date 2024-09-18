@@ -34,7 +34,7 @@ public class App {
         Interfaces.View view = new MainPageFrame();
         view.setPresenter(presenter);
         presenter.setView(view);
-        presenter.start(lista);
+        presenter.start();
         view.start();
    }
 }

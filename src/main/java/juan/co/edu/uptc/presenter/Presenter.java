@@ -47,6 +47,11 @@ public class Presenter implements Interfaces.Presenter {
     }
 
     @Override
+    public void start() {
+
+    }
+
+    @Override
     public void start(SimpleList<Vehicle> vehicles) {
         this.vehicles = transformToMatrix(vehicles);
     }

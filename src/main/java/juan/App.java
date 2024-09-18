@@ -1,5 +1,6 @@
 package juan;
 
+import co.edu.uptc.models.SimpleList;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import juan.co.edu.uptc.interfaces.Interfaces;
 import juan.co.edu.uptc.models.CreateObjects;
@@ -23,10 +24,7 @@ public class App {
 //        MainPageFrame mainPageFrame = new MainPageFrame();
 //        mainPageFrame.start();
 //        CreateObjects createObjects = new CreateObjects();
-//        List<Vehicle> lista = createObjects.getVehicles();
-//        for (Vehicle vehicle : lista) {
-//            System.out.println(vehicle);
-//        }
+//        SimpleList<Vehicle> lista = createObjects.getVehicles();
         Interfaces.Presenter presenter = new Presenter();
         Interfaces.Model model = new ListManagerVehicles();
 
@@ -36,7 +34,7 @@ public class App {
         Interfaces.View view = new MainPageFrame();
         view.setPresenter(presenter);
         presenter.setView(view);
-        presenter.start();
+        presenter.start(lista);
         view.start();
    }
 }

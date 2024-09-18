@@ -1,5 +1,6 @@
 package juan.co.edu.uptc.interfaces;
 
+import co.edu.uptc.models.SimpleList;
 import juan.co.edu.uptc.pojos.Vehicle;
 
 import java.util.List;
@@ -20,14 +21,11 @@ public interface Interfaces {
 
 
     interface Presenter {
-        String[] obtainVaccinesName();
         Object[][] obtainVehicles();
         Object[][] obtainVehiclesBycity();
         Object[][] obtainVehiclesByCountry();
         Object[][] obtainVehiclesByState();
-        void getDataAndSetData();
-        Object[][] obtainVisitsUpWeight(int i);
-        Object[][] obtainVisitsDownWeight(int i);
+
         void registerAppointment(String[] strings);
 
         void setModel(Model model);
@@ -35,5 +33,7 @@ public interface Interfaces {
         void setView(View view);
 
         void start();
+
+        void start(SimpleList<Vehicle> vehicles);
     }
 }

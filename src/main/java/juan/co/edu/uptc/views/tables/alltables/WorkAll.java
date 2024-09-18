@@ -1,9 +1,9 @@
-package juan.co.edu.uptc.views.appointments.allAppointments;
+package juan.co.edu.uptc.views.tables.alltables;
 
 
 
 import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.views.appointments.Table;
+import juan.co.edu.uptc.views.tables.Table;
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import lombok.Getter;
 

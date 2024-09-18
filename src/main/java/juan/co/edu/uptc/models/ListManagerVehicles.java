@@ -9,7 +9,7 @@ public class ListManagerVehicles implements Interfaces.Model{
 
     @Override
     public List<Vehicle> ListByCountry() {
-
+        return null;
     }
 
     @Override

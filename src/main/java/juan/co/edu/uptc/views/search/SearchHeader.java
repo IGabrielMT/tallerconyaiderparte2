@@ -2,7 +2,7 @@ package juan.co.edu.uptc.views.search;
 
 
 import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.views.appointments.allAppointments.MainAll;
+import juan.co.edu.uptc.views.tables.alltables.MainAll;
 import juan.co.edu.uptc.views.mainpage.MainPageFrame;
 import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
 import juan.co.edu.uptc.views.wildCardClasses.Global;

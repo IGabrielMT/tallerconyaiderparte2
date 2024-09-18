@@ -1,8 +1,9 @@
-package juan.co.edu.uptc.views.appointments.byState;
+package juan.co.edu.uptc.views.tables.byCity;
 
 import juan.co.edu.uptc.interfaces.Interfaces;
 import juan.co.edu.uptc.views.mainpage.MainPageFrame;
 import juan.co.edu.uptc.views.search.SearchMainPage;
+import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;
 
@@ -10,16 +11,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import juan.co.edu.uptc.views.wildCardClasses.*;
 
-public class HeaderByState extends JPanel {
-    private final MainPageFrame mainPageFrame;
+public class HeaderByCity extends JPanel {
     private JPanel headerLabelsPanel;
     private JPanel titlePanel;
     private final JDialog parent;
+    private final MainPageFrame mainPageFrame;
     private final Interfaces.Presenter presenter;
-
-    public HeaderByState(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+    public HeaderByCity(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
@@ -48,8 +47,9 @@ public class HeaderByState extends JPanel {
         headerLabelsPanel.setBackground(Global.HEADER_BACKGROUND_COLOR);
         this.add(headerLabelsPanel, BorderLayout.CENTER);
     }
+
     private void createLabelAddVaccines(){
-        JLabel label =  new LabelHeader("Registrar Cita");
+        JLabel label =  new LabelHeader("Analisis Por Vehiculo");
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -66,7 +66,7 @@ public class HeaderByState extends JPanel {
         this.add(titlePanel, BorderLayout.WEST);
     }
     private void createLblTitle(){
-        JLabel label = new JLabel("Veterinaria");
+        JLabel label = new JLabel("Analisis Por Vehiculo");
         titlePanel.add(Box.createHorizontalStrut(50));
         label.setFont(Global.FONT_TITLE_NORMAL);
         label.setForeground(Global.HEADER_TEXT_COLOR);
@@ -77,6 +77,7 @@ public class HeaderByState extends JPanel {
         button.addActionListener(e -> System.exit(0));
         headerLabelsPanel.add(button);
     }
+
     private void createRegister(){
         SearchMainPage searchMainPage = new SearchMainPage(mainPageFrame, presenter);
         searchMainPage.setVisible(true);

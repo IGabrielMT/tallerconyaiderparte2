@@ -1,7 +1,7 @@
 package juan.co.edu.uptc.views.mainpage;
 
 import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.views.appointments.allAppointments.MainAll;
+import juan.co.edu.uptc.views.tables.alltables.MainAll;
 import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;

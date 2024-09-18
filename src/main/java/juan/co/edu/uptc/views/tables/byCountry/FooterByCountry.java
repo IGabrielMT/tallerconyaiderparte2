@@ -1,12 +1,12 @@
-package juan.co.edu.uptc.views.appointments.byCountry;
+package juan.co.edu.uptc.views.tables.byCountry;
 
 
 
 
 import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.views.appointments.allAppointments.MainAll;
-import juan.co.edu.uptc.views.appointments.byCity.MainByCity;
-import juan.co.edu.uptc.views.appointments.byState.MainByState;
+import juan.co.edu.uptc.views.tables.alltables.MainAll;
+import juan.co.edu.uptc.views.tables.byCity.MainByCity;
+import juan.co.edu.uptc.views.tables.byState.MainByState;
 import juan.co.edu.uptc.views.mainpage.MainPageFrame;
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;

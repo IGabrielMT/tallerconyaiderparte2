@@ -1,8 +1,7 @@
-package juan.co.edu.uptc.views.appointments.byCountry;
-
+package juan.co.edu.uptc.views.tables.byCity;
 
 import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.views.appointments.Table;
+import juan.co.edu.uptc.views.tables.Table;
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import lombok.Getter;
 
@@ -10,23 +9,23 @@ import javax.swing.*;
 import java.awt.*;
 
 @Getter
-public class WorkByCountry extends JPanel {
+public class WorkByCity extends JPanel {
     private final Interfaces.Presenter presenter;
-    private Table tableByPhoneNumber;
+    private Table tableByCity;
 
-    public WorkByCountry(Interfaces.Presenter presenter){
+    public WorkByCity(Interfaces.Presenter presenter){
         this.presenter = presenter;
         initWorkPanel();
     }
     private void initWorkPanel() {
-        tableByPhoneNumber = new Table();
+        tableByCity = new Table();
         setBackground(Global.WORK_BACKGROUND_COLOR);
         setForeground(Global.WORK_TEXT_COLOR);
         createTitle();
         createTable();
     }
     private void createTable() {
-        JScrollPane scrollPane = new JScrollPane(tableByPhoneNumber.getTable());
+        JScrollPane scrollPane = new JScrollPane(tableByCity.getTable());
         scrollPane.setPreferredSize(obtainSizeForTable());
         setTableData();
         add(scrollPane, BorderLayout.CENTER);
@@ -41,7 +40,7 @@ public class WorkByCountry extends JPanel {
     }
 
     private void createTitle(JPanel panel){
-        JLabel title = new JLabel("Registros Ordenados Por Condado: ");
+        JLabel title = new JLabel("Registros Por Ciudad: ");
         title.setFont(Global.FONT_TITLE_BIG);
         title.setForeground(Global.WORK_TEXT_COLOR);
         title.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -61,9 +60,9 @@ public class WorkByCountry extends JPanel {
     }
 
     private void setTableData(){
-        Object[][] vehiclesList = presenter.obtainVehiclesByCountry();
+        Object[][] vehiclesList = presenter.obtainVehiclesBycity();
         for (Object[] datum : vehiclesList) {
-            tableByPhoneNumber.putData(datum);
+            tableByCity.putData(datum);
         }
     }
 }

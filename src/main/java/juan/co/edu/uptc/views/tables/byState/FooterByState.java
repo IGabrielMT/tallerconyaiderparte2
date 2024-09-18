@@ -1,39 +1,36 @@
-package juan.co.edu.uptc.views.appointments.allAppointments;
+package juan.co.edu.uptc.views.tables.byState;
 
-
-
-import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.views.appointments.byCity.MainByCity;
-import juan.co.edu.uptc.views.appointments.byCountry.MainByCountry;
-import juan.co.edu.uptc.views.appointments.byState.MainByState;
+import juan.co.edu.uptc.views.tables.alltables.MainAll;
+import juan.co.edu.uptc.views.tables.byCity.MainByCity;
+import juan.co.edu.uptc.views.tables.byCountry.MainByCountry;
 import juan.co.edu.uptc.views.mainpage.MainPageFrame;
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;
+import juan.co.edu.uptc.interfaces.Interfaces;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class FooterAll extends JPanel {
-    private final MainPageFrame mainPageFrame;
+public class FooterByState extends JPanel {
     private final JDialog parent;
+    private final MainPageFrame mainPageFrame;
     private final Interfaces.Presenter presenter;
 
-    public FooterAll(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
+    public FooterByState(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
         this.mainPageFrame = mainPageFrame;
         this.parent = parent;
         this.presenter = presenter;
         initPanel();
     }
-
     private void initPanel() {
         this.setBackground(Global.FOOTER_BACKGROUND_COLOR);
         this.setLayout(new BorderLayout());
         createWorkPanel();
     }
     private void createWorkPanel() {
-        JPanel gridPanel = new JPanel(new GridLayout(1, 6, 40, 40));
+        JPanel gridPanel = new JPanel(new GridLayout(1, 4, 40, 40));
         gridPanel.setBackground(Global.FOOTER_BACKGROUND_COLOR);
         int marginSize = 60;
         JPanel marginPanel = new JPanel(new BorderLayout());
@@ -46,10 +43,9 @@ public class FooterAll extends JPanel {
     private void addContent(JPanel gridPanel){
         createTitle1(gridPanel);
         createTitle2(gridPanel);
-        createTitle4(gridPanel);
         createTitle3(gridPanel);
+        createTitle4(gridPanel);
     }
-
     private void createTitle1(JPanel gridPanel){
         JLabel orderBy = new LabelHeader("Ordernar por: ");
         orderBy.setFont(Global.FONT_TITLE_NORMAL);
@@ -57,16 +53,16 @@ public class FooterAll extends JPanel {
         gridPanel.add(orderBy);
     }
     private void createTitle2(JPanel gridPanel){
-        JLabel date = new LabelHeader("Registros Por Estado");
+        JLabel date = new LabelHeader("Todos");
         date.setFont(Global.FONT_TEXTS);
         date.setForeground(Global.FOOTER_TEXT_COLOR);
         date.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByDateAppointments();
-                }
-            });
+                createAllAppointments();
+            }
+        });
         gridPanel.add(date);
     }
     private void createTitle3(JPanel gridPanel){
@@ -95,17 +91,20 @@ public class FooterAll extends JPanel {
         });
         gridpanel.add(responsible);
     }
-    private void createByNextVaccine(){
-        MainByCity mainByCity = new MainByCity(mainPageFrame, presenter);
-        mainByCity.setVisible(true);
+    private void createAllAppointments(){
+        MainAll mainAll = new MainAll(mainPageFrame, presenter);
+        mainAll.setVisible(true);
+    }
 
-    }
-    private void createByDateAppointments(){
-        MainByState mainByDateAppointments = new MainByState(mainPageFrame, presenter);
-        mainByDateAppointments.setVisible(true);
-    }
     private void createByParentAppointments(){
         MainByCountry mainByCountry = new MainByCountry(mainPageFrame, presenter);
         mainByCountry.setVisible(true);
     }
+    private void createByNextVaccine(){
+        MainByCity mainByCity = new MainByCity(mainPageFrame, presenter);
+        mainByCity.setVisible(true);
+    }
+
+
+
 }

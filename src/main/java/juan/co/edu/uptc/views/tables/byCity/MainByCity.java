@@ -1,17 +1,20 @@
-package juan.co.edu.uptc.views.appointments.byState;
+package juan.co.edu.uptc.views.tables.byCity;
+
+
 
 import juan.co.edu.uptc.interfaces.Interfaces;
 import juan.co.edu.uptc.views.mainpage.MainPageFrame;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainByState extends JDialog {
+public class MainByCity extends JDialog {
     private final MainPageFrame mainPageFrame;
     private final Interfaces.Presenter presenter;
 
-    public MainByState(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+    public MainByCity(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
@@ -35,15 +38,15 @@ public class MainByState extends JDialog {
         return new Dimension((int)width, (int)height);
     }
     private void createFooter() {
-        FooterByState footerAllAppointments = new FooterByState(this, mainPageFrame, presenter);
+        FooterByCity footerAllAppointments = new FooterByCity(this, mainPageFrame, presenter);
         add(footerAllAppointments, BorderLayout.SOUTH);
     }
     private void createWork() {
-        WorkByState workAllApointments = new WorkByState(presenter);
+        WorkByCity workAllApointments = new WorkByCity(presenter);
         add(workAllApointments, BorderLayout.CENTER);
     }
     private void createHeader() {
-        HeaderByState headerAllAppointments = new HeaderByState(this, mainPageFrame, presenter);
+        HeaderByCity headerAllAppointments = new HeaderByCity(this, mainPageFrame, presenter);
         add(headerAllAppointments, BorderLayout.NORTH);
     }
     private void fadeIn() {

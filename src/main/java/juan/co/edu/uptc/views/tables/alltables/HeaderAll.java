@@ -1,4 +1,4 @@
-package juan.co.edu.uptc.views.appointments.allAppointments;
+package juan.co.edu.uptc.views.tables.alltables;
 
 
 import juan.co.edu.uptc.interfaces.Interfaces;
@@ -51,7 +51,7 @@ public class HeaderAll extends JPanel {
     }
 
     private void createLabelAddVaccines(){
-        JLabel label =  new LabelHeader("Analisis Geograficos");
+        JLabel label =  new LabelHeader("Analisis por vehiculo");
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -68,7 +68,7 @@ public class HeaderAll extends JPanel {
         this.add(titlePanel, BorderLayout.WEST);
     }
     private void createLblTitle(){
-        JLabel label = new JLabel("Analisis Por Vehiculo");
+        JLabel label = new JLabel("Analisis geografico");
         titlePanel.add(Box.createHorizontalStrut(50));
         label.setFont(Global.FONT_TITLE_NORMAL);
         label.setForeground(Global.HEADER_TEXT_COLOR);

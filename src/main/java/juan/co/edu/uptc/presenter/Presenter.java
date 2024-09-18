@@ -51,4 +51,19 @@ public class Presenter implements Interfaces.Presenter {
     public void registerAppointment(String[] strings) {
 
     }
+
+    @Override
+    public void setModel(Interfaces.Model model) {
+
+    }
+
+    @Override
+    public void setView(Interfaces.View view) {
+
+    }
+
+    @Override
+    public void start() {
+
+    }
 }

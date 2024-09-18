@@ -1,4 +1,4 @@
-package juan.co.edu.uptc.views.appointments.byCountry;
+package juan.co.edu.uptc.views.tables.alltables;
 
 
 import juan.co.edu.uptc.interfaces.Interfaces;
@@ -9,14 +9,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainByCountry extends JDialog {
+public class MainAll extends JDialog {
     private final MainPageFrame mainPageFrame;
-    private final Interfaces.Presenter presenterVet;
+    private final Interfaces.Presenter presenter;
 
-    public MainByCountry(MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
+    public MainAll(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
-        this.presenterVet = presenterVet;
+        this.presenter = presenter;
         initComponents();
         createHeader();
         createWork();
@@ -37,16 +37,16 @@ public class MainByCountry extends JDialog {
         return new Dimension((int)width, (int)height);
     }
     private void createFooter() {
-        FooterByCountry footerAllAppointments = new FooterByCountry(this, mainPageFrame, presenterVet);
-        add(footerAllAppointments, BorderLayout.SOUTH);
+        FooterAll footerAll = new FooterAll(this, mainPageFrame, presenter);
+        add(footerAll, BorderLayout.SOUTH);
     }
     private void createWork() {
-        WorkByCountry workAllApointments = new WorkByCountry(presenterVet);
+        WorkAll workAllApointments = new WorkAll(presenter);
         add(workAllApointments, BorderLayout.CENTER);
     }
     private void createHeader() {
-        HeaderByCountry headerAllAppointments = new HeaderByCountry(this, mainPageFrame, presenterVet);
-        add(headerAllAppointments, BorderLayout.NORTH);
+        HeaderAll headerAll = new HeaderAll(this, mainPageFrame, presenter);
+        add(headerAll, BorderLayout.NORTH);
     }
     private void fadeIn() {
         Timer timer = new Timer(10, new ActionListener() {

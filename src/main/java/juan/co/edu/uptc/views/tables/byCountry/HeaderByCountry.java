@@ -1,4 +1,5 @@
-package juan.co.edu.uptc.views.appointments.byCity;
+package juan.co.edu.uptc.views.tables.byCountry;
+
 
 import juan.co.edu.uptc.interfaces.Interfaces;
 import juan.co.edu.uptc.views.mainpage.MainPageFrame;
@@ -12,16 +13,17 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class HeaderByCity extends JPanel {
+public class HeaderByCountry extends JPanel {
     private JPanel headerLabelsPanel;
     private JPanel titlePanel;
     private final JDialog parent;
     private final MainPageFrame mainPageFrame;
-    private final Interfaces.Presenter presenter;
-    public HeaderByCity(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+    private final Interfaces.Presenter presenterVet;
+
+    public HeaderByCountry(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
-        this.presenter = presenter;
+        this.presenterVet = presenterVet;
         initComponents();
         createPanelHeaderLabels();
         createLabelAddVaccines();
@@ -47,7 +49,6 @@ public class HeaderByCity extends JPanel {
         headerLabelsPanel.setBackground(Global.HEADER_BACKGROUND_COLOR);
         this.add(headerLabelsPanel, BorderLayout.CENTER);
     }
-
     private void createLabelAddVaccines(){
         JLabel label =  new LabelHeader("Analisis Por Vehiculo");
         label.addMouseListener(new MouseAdapter() {
@@ -66,7 +67,7 @@ public class HeaderByCity extends JPanel {
         this.add(titlePanel, BorderLayout.WEST);
     }
     private void createLblTitle(){
-        JLabel label = new JLabel("Analisis Por Vehiculo");
+        JLabel label = new JLabel("Analisis geografico");
         titlePanel.add(Box.createHorizontalStrut(50));
         label.setFont(Global.FONT_TITLE_NORMAL);
         label.setForeground(Global.HEADER_TEXT_COLOR);
@@ -79,7 +80,7 @@ public class HeaderByCity extends JPanel {
     }
 
     private void createRegister(){
-        SearchMainPage searchMainPage = new SearchMainPage(mainPageFrame, presenter);
+        SearchMainPage searchMainPage = new SearchMainPage(mainPageFrame, presenterVet);
         searchMainPage.setVisible(true);
     }
 

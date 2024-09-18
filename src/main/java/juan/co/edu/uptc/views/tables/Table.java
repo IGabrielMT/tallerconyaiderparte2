@@ -1,4 +1,4 @@
-package juan.co.edu.uptc.views.appointments;
+package juan.co.edu.uptc.views.tables;
 
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import lombok.Getter;

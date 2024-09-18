@@ -11,11 +11,11 @@ import java.awt.*;
 
 @Getter
 public class WorkByCountry extends JPanel {
-    private final Interfaces.Presenter presenterVet;
+    private final Interfaces.Presenter presenter;
     private Table tableByPhoneNumber;
 
-    public WorkByCountry(Interfaces.Presenter presenterVet){
-        this.presenterVet = presenterVet;
+    public WorkByCountry(Interfaces.Presenter presenter){
+        this.presenter = presenter;
         initWorkPanel();
     }
     private void initWorkPanel() {
@@ -28,6 +28,7 @@ public class WorkByCountry extends JPanel {
     private void createTable() {
         JScrollPane scrollPane = new JScrollPane(tableByPhoneNumber.getTable());
         scrollPane.setPreferredSize(obtainSizeForTable());
+        setTableData();
         add(scrollPane, BorderLayout.CENTER);
     }
     private void createTitle(){
@@ -59,4 +60,10 @@ public class WorkByCountry extends JPanel {
         return new Dimension((int)width, (int)height);
     }
 
+    private void setTableData(){
+        Object[][] vehiclesList = presenter.obtainVehiclesByCountry();
+        for (Object[] datum : vehiclesList) {
+            tableByPhoneNumber.putData(datum);
+        }
+    }
 }

@@ -57,4 +57,11 @@ public class WorkByState extends JPanel {
         double height = screenSize.getHeight() * 0.1;
         return new Dimension((int) width, (int) height);
     }
+
+    private void setTableData() {
+        Object[][] vehiclesList = presenter.obtainVehiclesByState();
+        for (Object[] datum : vehiclesList) {
+            tableByDateAppointments.putData(datum);
+        }
+    }
 }

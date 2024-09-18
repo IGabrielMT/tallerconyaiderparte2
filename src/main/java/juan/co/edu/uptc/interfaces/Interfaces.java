@@ -15,10 +15,10 @@ public interface Interfaces {
 
     interface Presenter {
         String[] obtainVaccinesName();
-        Object[][] obtainVisits();
-        Object[][] obtainVisitsByCloseDueDate();
-        Object[][] obtainVisitsByPetParentPhoneNumber(Long phoneNumber);
-        Object[][] obtainVisitsByLaterDueDate();
+        Object[][] obtainVehicles();
+        Object[][] obtainVehiclesBycity();
+        Object[][] obtainVehiclesByCountry();
+        Object[][] obtainVehiclesByState();
         void getDataAndSetData();
         Object[][] obtainVisitsUpWeight(int i);
         Object[][] obtainVisitsDownWeight(int i);

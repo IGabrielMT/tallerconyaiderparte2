@@ -11,22 +11,23 @@ import java.awt.*;
 @Getter
 public class WorkByCity extends JPanel {
     private final Interfaces.Presenter presenter;
-    private Table tableByDueDateVaccine;
+    private Table tableByCity;
 
     public WorkByCity(Interfaces.Presenter presenter){
         this.presenter = presenter;
         initWorkPanel();
     }
     private void initWorkPanel() {
-        tableByDueDateVaccine = new Table();
+        tableByCity = new Table();
         setBackground(Global.WORK_BACKGROUND_COLOR);
         setForeground(Global.WORK_TEXT_COLOR);
         createTitle();
         createTable();
     }
     private void createTable() {
-        JScrollPane scrollPane = new JScrollPane(tableByDueDateVaccine.getTable());
+        JScrollPane scrollPane = new JScrollPane(tableByCity.getTable());
         scrollPane.setPreferredSize(obtainSizeForTable());
+        setTableData();
         add(scrollPane, BorderLayout.CENTER);
     }
     private void createTitle(){
@@ -58,4 +59,10 @@ public class WorkByCity extends JPanel {
         return new Dimension((int)width, (int)height);
     }
 
+    private void setTableData(){
+        Object[][] vehiclesList = presenter.obtainVehiclesBycity();
+        for (Object[] datum : vehiclesList) {
+            tableByCity.putData(datum);
+        }
+    }
 }

@@ -50,10 +50,9 @@ public class WorkAll extends JPanel  {
         titlePanel.add(data);
     }
     private void setData(){
-        Object[][] visits = presenter.obtainVisits();
-        for (Object[] datum : visits) {
+        Object[][] vehiclesList = presenter.obtainVehicles();
+        for (Object[] datum : vehiclesList) {
             tableAllAppointments.putData(datum);
         }
     }
-
 }

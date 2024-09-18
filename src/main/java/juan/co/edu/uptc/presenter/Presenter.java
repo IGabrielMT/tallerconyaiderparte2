@@ -13,22 +13,22 @@ public class Presenter implements Interfaces.Presenter {
     }
 
     @Override
-    public Object[][] obtainVisits() {
+    public Object[][] obtainVehicles() {
         return new Object[0][];
     }
 
     @Override
-    public Object[][] obtainVisitsByCloseDueDate() {
+    public Object[][] obtainVehiclesBycity() {
         return new Object[0][];
     }
 
     @Override
-    public Object[][] obtainVisitsByPetParentPhoneNumber(Long phoneNumber) {
+    public Object[][] obtainVehiclesByCountry() {
         return new Object[0][];
     }
 
     @Override
-    public Object[][] obtainVisitsByLaterDueDate() {
+    public Object[][] obtainVehiclesByState() {
         return new Object[0][];
     }
 

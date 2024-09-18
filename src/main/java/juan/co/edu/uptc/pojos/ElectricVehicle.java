@@ -12,7 +12,7 @@ public class ElectricVehicle {
 }
 @Setter
 @Getter
-class Approval{
+class  Approval{
     public int reviewedAt;
     public boolean reviewedAutomatically;
     public String state;

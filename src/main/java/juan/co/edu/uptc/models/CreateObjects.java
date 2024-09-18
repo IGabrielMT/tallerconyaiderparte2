@@ -22,8 +22,8 @@ public class CreateObjects {
     @SneakyThrows
     private ElectricVehicle createElectricVehicle() {
         ObjectMapper om = new ObjectMapper();
-        InputStream inputStream = new FileInputStream("src/main/resources/api/rows.json");
-//        String inputStream = ReadFromURL.getFileFromURL("https://data.wa.gov/api/views/f6w7-q2d2/rows.json?accessType=DOWNLOAD");
+//        InputStream inputStream = new FileInputStream("src/main/resources/api/rows.json");
+        String inputStream = ReadFromURL.getFileFromURL("https://data.wa.gov/api/views/f6w7-q2d2/rows.json?accessType=DOWNLOAD");
         return om.readValue(inputStream, ElectricVehicle.class);
     }
     private void exeStringToData(){

@@ -20,9 +20,6 @@ public class App {
         MainPageFrame mainPageFrame = new MainPageFrame();
         mainPageFrame.start();
         CreateObjects createObjects = new CreateObjects();
-        List<Vehicle> lista = createObjects.getVehicles();
-        for (Vehicle vehicle : lista) {
-            System.out.println(vehicle);
-        }
+        List<Vehicle> list= createObjects.getVehicles();
    }
 }

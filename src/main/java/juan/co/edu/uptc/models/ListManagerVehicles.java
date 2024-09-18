@@ -19,12 +19,11 @@ public class ListManagerVehicles implements Interfaces.Model{
 
     @Override
     public List<Vehicle> ListByCountry_byState() {
-        return List.of();
+
     }
 
     private List<Vehicle> createListByCountry() {
-        listVehicles.sort(VehicleComparator.byCountry());
-        return listVehicles;
+        listVehicles.sort(VehicleComparator.);
     }
 
 
@@ -32,10 +31,17 @@ public class ListManagerVehicles implements Interfaces.Model{
     public List<Vehicle> ListByCountry_byCountryQuantity() {
         return List.of();
     }
-
+//TODO: Terminar este metodo
     @Override
     public List<Vehicle> ListByState() {
-        return List.of();
+        int cont = 0;
+        for (Vehicle vehicle : listVehicles) {
+            String state;
+            state = vehicle.getState();
+            if (vehicle.getState() == state){
+                cont++;
+            }
+        }
     }
 
     @Override
@@ -48,9 +54,6 @@ public class ListManagerVehicles implements Interfaces.Model{
         return listVehicles;
     }
 
-    @Override
-    public void setPresenter(Interfaces.Presenter presenter) {
 
-    }
 
 }

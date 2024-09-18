@@ -21,15 +21,10 @@ import java.util.stream.Collectors;
 public class App {
     @SneakyThrows
     public static void main(String[] args) {
-//        MainPageFrame mainPageFrame = new MainPageFrame();
-//        mainPageFrame.start();
-//        CreateObjects createObjects = new CreateObjects();
-//        SimpleList<Vehicle> lista = createObjects.getVehicles();
         Interfaces.Presenter presenter = new Presenter();
         Interfaces.Model model = new ListManagerVehicles();
 
         presenter.setModel(model);
-        model.setPresenter(presenter);
 
         Interfaces.View view = new MainPageFrame();
         view.setPresenter(presenter);

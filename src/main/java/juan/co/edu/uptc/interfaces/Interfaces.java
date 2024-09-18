@@ -12,7 +12,6 @@ public interface Interfaces {
         List<Vehicle> ListByState();
         List<Vehicle> ListByCity();
         List<Vehicle> allVehicles();
-        void setPresenter(Presenter presenter);
     }
 
     interface View {

@@ -27,11 +27,15 @@ class Approval{
     public Submitter submitter;
 }
 
+@Setter
+@Getter
 class ClientContext{
     public ArrayList<Object> clientContextVariables;
     public InheritedVariables inheritedVariables;
 }
 
+@Setter
+@Getter
 class Column{
     public int id;
     public String name;
@@ -46,12 +50,16 @@ class Column{
     public ComputationStrategy computationStrategy;
 }
 
+@Setter
+@Getter
 class ComputationStrategy{
     public ArrayList<String> source_columns;
     public String type;
     public Parameters parameters;
 }
 
+@Setter
+@Getter
 class CustomFields{
     @JsonProperty("Temporal")
     public Temporal temporal;
@@ -61,16 +69,22 @@ class CustomFields{
     public Notes notes;
 }
 
+@Setter
+@Getter
 class Format{
     public String align;
 }
 
+@Setter
+@Getter
 class Grant{
     public boolean inherited;
     public String type;
     public ArrayList<String> flags;
 }
 
+@Setter
+@Getter
 class Identification{
     @JsonProperty("Originator")
     public String originator;
@@ -78,24 +92,34 @@ class Identification{
     public String metadataLanguage;
 }
 
+@Setter
+@Getter
 class InheritedVariables{
 }
 
+@Setter
+@Getter
 class License{
     public String name;
     public String termsLink;
 }
 
+@Setter
+@Getter
 class Meta{
     public View view;
 }
 
+@Setter
+@Getter
 class Metadata{
     public CustomFields custom_fields;
     public String rowLabel;
     public ArrayList<String> availableDisplayTypes;
 }
 
+@Setter
+@Getter
 class Notes{
     @JsonProperty("1. ")
     public String _1;
@@ -107,6 +131,8 @@ class Notes{
     public String _4;
 }
 
+@Setter
+@Getter
 class Owner{
     public String id;
     public String displayName;
@@ -118,29 +144,41 @@ class Owner{
     public ArrayList<String> flags;
 }
 
+@Setter
+@Getter
 class Parameters{
     public String region;
     public String primary_key;
 }
 
+@Setter
+@Getter
 class Query{
 }
 
 
+@Setter
+@Getter
 class SubmissionDetails{
     public String permissionType;
 }
 
+@Setter
+@Getter
 class SubmissionOutcomeApplication{
     public int failureCount;
     public String status;
 }
 
+@Setter
+@Getter
 class Submitter{
     public String id;
     public String displayName;
 }
 
+@Setter
+@Getter
 class TableAuthor{
     public String id;
     public String displayName;
@@ -152,6 +190,8 @@ class TableAuthor{
     public ArrayList<String> flags;
 }
 
+@Setter
+@Getter
 class Temporal{
     @JsonProperty("Posting Frequency")
     public String postingFrequency;
@@ -159,6 +199,8 @@ class Temporal{
     public String periodofTime;
 }
 
+@Setter
+@Getter
 class View{
     public String id;
     public String name;

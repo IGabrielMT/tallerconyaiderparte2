@@ -15,9 +15,8 @@ public class Table {
     }
     private void createTable() {
         String[] columnNames = {
-                "Nombre del Responsable", "Apellido", "Correo Electronico",
-                "Numero de Telefono", "Nombre de la Mascota", "Tipo de Mascota", "Numero de Vacunas Usadas",
-                "Vacunas Usadas", "Dia de la Cita", "Fecha de Vencimiento de la Vacuna", "Peso de la mascota"
+                "Estado", "Condado", "Ciudad",
+                "Modelo de vehiculo", "Fabricante", "Rango Electrico"
         };
         DefaultTableModel model = new DefaultTableModel(null, columnNames){
             @Override

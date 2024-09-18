@@ -3,6 +3,7 @@ package juan.co.edu.uptc.models;
 import co.edu.uptc.models.SimpleList;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import juan.co.edu.uptc.pojos.ElectricVehicle;
+import juan.co.edu.uptc.pojos.Vehicle;
 
 import java.util.ArrayList;
 

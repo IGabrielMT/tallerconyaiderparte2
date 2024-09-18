@@ -11,6 +11,7 @@ public interface Interfaces {
         List<Vehicle> ListByCountry_byCountryQuantity();
         List<Vehicle> ListByState();
         List<Vehicle> ListByCity();
+        List<Vehicle> allVehicles();
         void setPresenter(Presenter presenter);
     }
 
@@ -34,7 +35,5 @@ public interface Interfaces {
         void setView(View view);
 
         void start();
-
-        void start(SimpleList<Vehicle> vehicles);
     }
 }

@@ -19,12 +19,14 @@ public class ListManagerVehicles implements Interfaces.Model{
 
     @Override
     public List<Vehicle> ListByCountry_byState() {
-        createListByCountry();
+        return List.of();
     }
 
-    private void createListByCountry() {
-        Collections.sort(listVehicles, );
+    private List<Vehicle> createListByCountry() {
+        listVehicles.sort(VehicleComparator.byCountry());
+        return listVehicles;
     }
+
 
     @Override
     public List<Vehicle> ListByCountry_byCountryQuantity() {
@@ -42,7 +44,13 @@ public class ListManagerVehicles implements Interfaces.Model{
     }
 
     @Override
+    public List<Vehicle> allVehicles() {
+        return listVehicles;
+    }
+
+    @Override
     public void setPresenter(Interfaces.Presenter presenter) {
 
     }
+
 }

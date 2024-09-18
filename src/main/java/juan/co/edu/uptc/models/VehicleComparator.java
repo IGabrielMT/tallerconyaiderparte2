@@ -29,4 +29,6 @@ public class VehicleComparator {
     public static Comparator<Vehicle> byElectricRange() {
         return Comparator.comparing(Vehicle::getElectricRange);
     }
+
+
 }

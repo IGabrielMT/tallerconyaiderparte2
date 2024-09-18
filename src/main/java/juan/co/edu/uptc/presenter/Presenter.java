@@ -2,18 +2,22 @@ package juan.co.edu.uptc.presenter;
 
 import co.edu.uptc.models.SimpleList;
 import juan.co.edu.uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.models.CreateObjects;
+import juan.co.edu.uptc.models.ListManagerVehicles;
 import juan.co.edu.uptc.pojos.Vehicle;
 
+import java.util.List;
+
 public class Presenter implements Interfaces.Presenter {
-
-    private Object[][] vehicles;
-
+    private Interfaces.Model model;
+    private Interfaces.View view;
+    private List<Vehicle> vehicles;
     public Presenter() {
     }
 
     @Override
     public Object[][] obtainVehicles() {
-        return vehicles;
+        return transformToMatrix(vehicles);
     }
 
     @Override
@@ -38,25 +42,21 @@ public class Presenter implements Interfaces.Presenter {
 
     @Override
     public void setModel(Interfaces.Model model) {
-
+        this.model = model;
     }
 
     @Override
     public void setView(Interfaces.View view) {
-
+        this.view = view;
     }
 
     @Override
     public void start() {
-
+        vehicles = model.allVehicles();
     }
 
-    @Override
-    public void start(SimpleList<Vehicle> vehicles) {
-        this.vehicles = transformToMatrix(vehicles);
-    }
 
-    private Object[][] transformToMatrix(SimpleList<Vehicle> vehicles) {
+    private Object[][] transformToMatrix(List<Vehicle> vehicles) {
         Object[][] data = new Object[vehicles.size()][10];
         for (int i = 0; i < vehicles.size(); i++) {
             data[i] = fillRow(vehicles.get(i));

@@ -4,7 +4,7 @@ import co.edu.uptc.models.SimpleList;
 import juan.co.edu.uptc.interfaces.Interfaces;
 import juan.co.edu.uptc.pojos.Vehicle;
 
-import java.util.List;
+import java.util.*;
 
 public class ListManagerVehicles implements Interfaces.Model{
     private final SimpleList<Vehicle> listVehicles;
@@ -13,22 +13,70 @@ public class ListManagerVehicles implements Interfaces.Model{
         CreateObjects createObjects = new CreateObjects();
         listVehicles = createObjects.getVehicles();
     }
-
     @Override
     public List<Vehicle> listByCountry_byState() {
-        return null;
+        List<Vehicle> sortedVehicles = new java.util.ArrayList<>(new java.util.ArrayList<>(List.copyOf(listVehicles)));
+        sortedVehicles.sort(VehicleComparator.byState());
+        return sortedVehicles;
     }
 
     @Override
     public List<String> listByCountry_byCountryQuantity() {
-        return List.of();
+        List<Vehicle> sortedByState = listByCountry_byState();
+        List<List<Vehicle>> separatedByState = separateByState(sortedByState);
+        return createCountryPlusQuantityList(separatedByState);
     }
 
-    private List<Vehicle> createListByCountry() {
-        listVehicles.sort(VehicleComparator.byCountry());
-        return null;
+    private List<String> createCountryPlusQuantityList(List<List<Vehicle>> separatedByState) {
+        Map<String, Integer> countryCountMap = new HashMap<>();
+        for (List<Vehicle> stateList : separatedByState) {
+            for (Vehicle vehicle : stateList) {
+                String country = vehicle.getCountry();
+                countryCountMap.put(country, countryCountMap.getOrDefault(country, 0) + 1);
+            }
+        }
+
+        Set<String> uniqueEntries = new HashSet<>();
+        SimpleList<String> countryPlusQuantity = new SimpleList<>();
+        for (List<Vehicle> stateList : separatedByState) {
+            for (Vehicle vehicle : stateList) {
+                String country = vehicle.getCountry();
+                int count = countryCountMap.get(country);
+                String entry = vehicle.getState() + " " + country + " " + count;
+                if (uniqueEntries.add(entry)) {
+                    countryPlusQuantity.add(entry);
+                }
+            }
+        }
+        return countryPlusQuantity;
     }
 
+    private String countByCountry(String country) {
+        int count = 0;
+        for (Vehicle vehicle : listVehicles) {
+            if (vehicle.getCountry().equals(country)) {
+                count++;
+            }
+        }
+        return String.valueOf(count);
+    }
+
+
+    private List<List<Vehicle>> separateByState(List<Vehicle> sortedByState) {
+        List<List<Vehicle>> separatedByState = new java.util.ArrayList<>();
+        List<Vehicle> currentList = new java.util.ArrayList<>();
+        String currentState = sortedByState.getFirst().getState();
+        for (Vehicle vehicle : sortedByState) {
+            if (!vehicle.getState().equals(currentState)) {
+                separatedByState.add(currentList);
+                currentList = new java.util.ArrayList<>();
+                currentState = vehicle.getState();
+            }
+            currentList.add(vehicle);
+        }
+        separatedByState.add(currentList);
+        return separatedByState;
+    }
 
     @Override
     public List<String> listByState() {

@@ -9,6 +9,7 @@ public class Presenter implements Interfaces.Presenter {
     private Interfaces.Model model;
     private Interfaces.View view;
     private List<Vehicle> vehicles;
+    private Object[][] dataForQuantity;
     public Presenter() {
     }
 
@@ -30,8 +31,23 @@ public class Presenter implements Interfaces.Presenter {
 
     @Override
     public Object[][] obtainVehiclesByCountry() {
-        return new Object[0][];
+        List<String> listByQuantityByStateOrdenaded = model.listByCountry_byCountryQuantity();
+        Object[][] data = new Object[listByQuantityByStateOrdenaded.size()][3];
+        for (int i = 0; i < listByQuantityByStateOrdenaded.size(); i++) {
+            String[] parts = listByQuantityByStateOrdenaded.get(i).split(" ");
+            data[i][0] = parts[0];
+            data[i][1] = parts[1];
+            try{
+                int test = Integer.parseInt(parts[2]);
+                data[i][2] = test;
+            }catch(NumberFormatException e) {
+                data[i][1] = parts[1] + " " + parts[2];
+                data[i][2] = parts[3];
+            }
+        }
+        return data;
     }
+
 
     @Override
     public Object[][] obtainVehiclesByState() {

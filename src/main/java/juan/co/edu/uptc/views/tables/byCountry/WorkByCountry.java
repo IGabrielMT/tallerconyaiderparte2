@@ -12,21 +12,22 @@ import java.awt.*;
 @Getter
 public class WorkByCountry extends JPanel {
     private final Interfaces.Presenter presenter;
-    private Table tableByPhoneNumber;
+    private Table table;
 
     public WorkByCountry(Interfaces.Presenter presenter){
         this.presenter = presenter;
         initWorkPanel();
     }
     private void initWorkPanel() {
-        tableByPhoneNumber = new Table();
+        table = new Table();
+        table.createTable(new String[]{"Estado", "Condado", "Cantidad"});
         setBackground(Global.WORK_BACKGROUND_COLOR);
         setForeground(Global.WORK_TEXT_COLOR);
         createTitle();
         createTable();
     }
     private void createTable() {
-        JScrollPane scrollPane = new JScrollPane(tableByPhoneNumber.getTable());
+        JScrollPane scrollPane = new JScrollPane(table.getTable());
         scrollPane.setPreferredSize(obtainSizeForTable());
         setTableData();
         add(scrollPane, BorderLayout.CENTER);
@@ -61,9 +62,9 @@ public class WorkByCountry extends JPanel {
     }
 
     private void setTableData(){
-        Object[][] vehiclesList = presenter.obtainVehiclesByCountry();
-        for (Object[] datum : vehiclesList) {
-            tableByPhoneNumber.putData(datum);
+        Object[][] data = presenter.obtainVehiclesByCountry();
+        for (Object[] row : data) {
+            table.putData(row);
         }
     }
 }

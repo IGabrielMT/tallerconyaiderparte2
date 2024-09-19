@@ -40,5 +40,4 @@ public class Table {
         model.setRowCount(0);
     }
 
-
 }

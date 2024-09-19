@@ -29,13 +29,6 @@ public class App {
         Interfaces.View view = new MainPageFrame();
         view.setPresenter(presenter);
         presenter.setView(view);
-        presenter.start();
         view.start();
-//
-//        ListManagerVehicles listManagerVehicles = new ListManagerVehicles();
-//        for (String vehicle : listManagerVehicles.ListByCity()){
-//            System.out.println(vehicle);
-//        }
-
    }
 }

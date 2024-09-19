@@ -24,11 +24,6 @@ public class ListManagerVehicles implements Interfaces.Model{
         return List.of();
     }
 
-    private List<Vehicle> createListByCountry() {
-        listVehicles.sort(VehicleComparator.byCountry());
-        return null;
-    }
-
 
     @Override
     public List<String> listByState() {

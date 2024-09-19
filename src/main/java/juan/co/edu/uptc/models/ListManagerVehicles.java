@@ -149,7 +149,4 @@ public class ListManagerVehicles implements Interfaces.Model{
         }
         return "El numero de vehiculos con modelo " + model + " \nFabricante " + manufacturer + " \nRango electrico " + electricRange + " \nes: " + count;
     }
-
-
-
 }

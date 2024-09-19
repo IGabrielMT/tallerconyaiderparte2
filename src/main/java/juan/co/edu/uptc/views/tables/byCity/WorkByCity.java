@@ -19,6 +19,7 @@ public class WorkByCity extends JPanel {
     }
     private void initWorkPanel() {
         tableByCity = new Table();
+        tableByCity.createTable(new String[]{"Ciudad", "Cantidad de registros"});
         setBackground(Global.WORK_BACKGROUND_COLOR);
         setForeground(Global.WORK_TEXT_COLOR);
         createTitle();

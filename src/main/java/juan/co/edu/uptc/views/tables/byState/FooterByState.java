@@ -1,6 +1,5 @@
 package juan.co.edu.uptc.views.tables.byState;
 
-import juan.co.edu.uptc.views.tables.alltables.MainAll;
 import juan.co.edu.uptc.views.tables.byCity.MainByCity;
 import juan.co.edu.uptc.views.tables.byCountry.MainByCountry;
 import juan.co.edu.uptc.views.mainpage.MainPageFrame;
@@ -42,7 +41,6 @@ public class FooterByState extends JPanel {
     }
     private void addContent(JPanel gridPanel){
         createTitle1(gridPanel);
-        createTitle2(gridPanel);
         createTitle3(gridPanel);
         createTitle4(gridPanel);
     }
@@ -51,19 +49,6 @@ public class FooterByState extends JPanel {
         orderBy.setFont(Global.FONT_TITLE_NORMAL);
         orderBy.setForeground(Global.FOOTER_TEXT_COLOR);
         gridPanel.add(orderBy);
-    }
-    private void createTitle2(JPanel gridPanel){
-        JLabel date = new LabelHeader("Todos");
-        date.setFont(Global.FONT_TEXTS);
-        date.setForeground(Global.FOOTER_TEXT_COLOR);
-        date.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-                createAllAppointments();
-            }
-        });
-        gridPanel.add(date);
     }
     private void createTitle3(JPanel gridPanel){
         JLabel petsNextTo = new LabelHeader("Registros de Ciudad");
@@ -91,11 +76,6 @@ public class FooterByState extends JPanel {
         });
         gridpanel.add(responsible);
     }
-    private void createAllAppointments(){
-        MainAll mainAll = new MainAll(mainPageFrame, presenter);
-        mainAll.setVisible(true);
-    }
-
     private void createByParentAppointments(){
         MainByCountry mainByCountry = new MainByCountry(mainPageFrame, presenter);
         mainByCountry.setVisible(true);

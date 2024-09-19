@@ -1,9 +1,6 @@
 package juan.co.edu.uptc.presenter;
 
-import co.edu.uptc.models.SimpleList;
 import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.models.CreateObjects;
-import juan.co.edu.uptc.models.ListManagerVehicles;
 import juan.co.edu.uptc.pojos.Vehicle;
 
 import java.util.List;
@@ -22,7 +19,13 @@ public class Presenter implements Interfaces.Presenter {
 
     @Override
     public Object[][] obtainVehiclesBycity() {
-        return null;
+        List<String> listCity = model.listByCity();
+        Object[][] data = new Object[listCity.size() / 2][2];
+        for (int i = 0; i < listCity.size(); i += 2) {
+            data[i / 2][0] = listCity.get(i);
+            data[i / 2][1] = listCity.get(i + 1);
+        }
+        return data;
     }
 
     @Override
@@ -32,12 +35,14 @@ public class Presenter implements Interfaces.Presenter {
 
     @Override
     public Object[][] obtainVehiclesByState() {
-        return new Object[0][];
-    }
-
-    @Override
-    public void registerAppointment(String[] strings) {
-
+        List<String> listByState = model.listByState();
+        Object[][] data = new Object[listByState.size()][2];
+        for (int i = 0; i < listByState.size(); i++) {
+            String[] parts = listByState.get(i).split(" ");
+            data[i][0] = parts[0];
+            data[i][1] = parts[1];
+        }
+        return data;
     }
 
     @Override
@@ -55,6 +60,20 @@ public class Presenter implements Interfaces.Presenter {
         vehicles = model.allVehicles();
     }
 
+    @Override
+    public Object[] getVehicleModels() {
+        return model.getVehiclesModels().toArray();
+    }
+
+    @Override
+    public Object[] getManufacters() {
+        return model.getVehiclesManufacturers().toArray();
+    }
+
+    @Override
+    public String countByModelManufacturerAndElectricRange(String modelV, String manufacturer, int electricRange) {
+        return model.countByModelManufacturerAndElectricRange(modelV, manufacturer, electricRange);
+    }
 
     private Object[][] transformToMatrix(List<Vehicle> vehicles) {
         Object[][] data = new Object[vehicles.size()][10];

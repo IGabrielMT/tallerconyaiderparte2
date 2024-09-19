@@ -4,8 +4,6 @@ import co.edu.uptc.models.SimpleList;
 import juan.co.edu.uptc.interfaces.Interfaces;
 import juan.co.edu.uptc.pojos.Vehicle;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class ListManagerVehicles implements Interfaces.Model{
@@ -17,8 +15,13 @@ public class ListManagerVehicles implements Interfaces.Model{
     }
 
     @Override
-    public List<Vehicle> ListByCountry_byState() {
+    public List<Vehicle> listByCountry_byState() {
         return null;
+    }
+
+    @Override
+    public List<String> listByCountry_byCountryQuantity() {
+        return List.of();
     }
 
     private List<Vehicle> createListByCountry() {
@@ -28,12 +31,7 @@ public class ListManagerVehicles implements Interfaces.Model{
 
 
     @Override
-    public List<Vehicle> ListByCountry_byCountryQuantity() {
-        return List.of();
-    }
-
-    @Override
-    public List<String> ListByState() {
+    public List<String> listByState() {
     SimpleList<String> existingStates = new SimpleList<>();
     int[] counts = countVehiclesByState(existingStates);
     sortStatesByCount(existingStates, counts);
@@ -77,13 +75,86 @@ public class ListManagerVehicles implements Interfaces.Model{
     }
 
     @Override
-    public List<String> ListByCity() {
-        return List.of();
-    }
-
-    @Override
     public List<Vehicle> allVehicles() {
         return listVehicles;
     }
+
+    @Override
+    public List<String> listByCity() {
+        SimpleList<String> existingCities = new SimpleList<>();
+        int[] counts = countVehiclesByCity(existingCities);
+        int maxCount = findMaxCount(counts);
+        return listCitiesWithMaxCount(existingCities, counts, maxCount);
+    }
+
+    private int[] countVehiclesByCity(SimpleList<String> existingCities) {
+        int[] counts = new int[listVehicles.size()];
+        for (Vehicle vehicle : listVehicles) {
+            String city = vehicle.getCity();
+            int index = existingCities.indexOf(city);
+            if (index == -1) {
+                existingCities.add(city);
+                counts[existingCities.size() - 1] = 1;
+            } else {
+                counts[index]++;
+            }
+        }
+        return counts;
+    }
+    private int findMaxCount(int[] counts) {
+        int maxCount = 0;
+        for (int count : counts) {
+            if (count > maxCount) {
+                maxCount = count;
+            }
+        }
+        return maxCount;
+    }
+    private List<String> listCitiesWithMaxCount(SimpleList<String> existingCities, int[] counts, int maxCount) {
+        SimpleList<String> citiesWithMaxCount = new SimpleList<>();
+        for (int i = 0; i < existingCities.size(); i++) {
+            if (counts[i] == maxCount) {
+                citiesWithMaxCount.add(existingCities.get(i));
+                citiesWithMaxCount.add(String.valueOf(maxCount));
+            }
+        }
+        return citiesWithMaxCount;
+    }
+
+    @Override
+    public List<String> getVehiclesModels(){
+        SimpleList<String> models = new SimpleList<>();
+        models.add("Ninguno");
+        for (Vehicle vehicle : listVehicles){
+            models.add(vehicle.getModelVehicle());
+        }
+        return models;
+    }
+    @Override
+    public List<String> getVehiclesManufacturers(){
+        SimpleList<String> manufacturers = new SimpleList<>();
+        manufacturers.add("Ninguno");
+        for (Vehicle vehicle : listVehicles){
+            manufacturers.add(vehicle.getManufacturer());
+        }
+        return manufacturers;
+    }
+
+    @Override
+    public String countByModelManufacturerAndElectricRange(String model, String manufacturer, int electricRange) {
+        int count = 0;
+        for (Vehicle vehicle : listVehicles) {
+            boolean matchesModel = model.equals("Ninguno") || vehicle.getModelVehicle().equals(model);
+            boolean matchesManufacturer = manufacturer.equals("Ninguno") || vehicle.getManufacturer().equals(manufacturer);
+            boolean matchesElectricRange = vehicle.getElectricRange().equals(""+electricRange);
+
+            if (matchesModel && matchesManufacturer && matchesElectricRange) {
+                count++;
+            }
+        }
+        return "El numero de vehiculos con modelo " + model + " \nFabricante " + manufacturer + " \nRango electrico " + electricRange + " \nes: " + count;
+    }
+
+
 
 }

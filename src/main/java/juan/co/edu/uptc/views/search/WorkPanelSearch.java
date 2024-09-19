@@ -1,6 +1,7 @@
 package juan.co.edu.uptc.views.search;
 
 import  juan.co.edu.uptc.interfaces.Interfaces;
+import juan.co.edu.uptc.views.wildCardClasses.NumericTextField;
 import lombok.Getter;
 import lombok.Setter;
 import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
@@ -13,15 +14,15 @@ import java.util.Objects;
 @Getter
 @Setter
 public class WorkPanelSearch extends JPanel {
-    private Interfaces.Presenter presenterVet;
+    private Interfaces.Presenter presenter;
     private JComboBox byFabricante;
-    private JComboBox byRangoElectrico;
+    private NumericTextField byRangoElectrico;
     private JComboBox byModeloDeVehiculo;
     private JDialog parent;
 
     public WorkPanelSearch(JDialog parent, Interfaces.Presenter presenterVet){
         this.parent = parent;
-        this.presenterVet = presenterVet;
+        this.presenter = presenterVet;
     }
 
     public void buildPanel() {
@@ -60,11 +61,11 @@ public class WorkPanelSearch extends JPanel {
         label = new JLabel("Por Modelo del Vehiculo:");
         label.setFont(Global.FONT_TEXTS);
         gridPanel.add(label);
-        byFabricante = new JComboBox<>(new String[]{"0", "1", "2", "3"});
+        byFabricante = new JComboBox<>(presenter.getManufacters());
         gridPanel.add(byFabricante);
-        byRangoElectrico = new JComboBox<>(new String[]{"0", "1", "2", "3"});
+        byRangoElectrico = new NumericTextField("Rango Electrico");
         gridPanel.add(byRangoElectrico);
-        byModeloDeVehiculo = new JComboBox<>(new String[]{"0", "1", "2", "3"});
+        byModeloDeVehiculo = new JComboBox<>(presenter.getVehicleModels());
         gridPanel.add(byModeloDeVehiculo);
     }
 
@@ -85,8 +86,11 @@ public class WorkPanelSearch extends JPanel {
     private JButton createButtonRegister(){
         CustomButton button = new CustomButton("Buscar");
         button.addActionListener(e -> {
-            if (presenterVet != null) {
-                presenterVet.registerAppointment(returnData());
+            if (presenter != null) {
+                String model = Objects.requireNonNull(byModeloDeVehiculo.getSelectedItem()).toString();
+                String manufacturer = Objects.requireNonNull(byFabricante.getSelectedItem()).toString();
+                int electricRange = Integer.parseInt(Objects.requireNonNull(byRangoElectrico.getText()));
+                JOptionPane.showMessageDialog(this, presenter.countByModelManufacturerAndElectricRange(model, manufacturer, electricRange));
             }
         });
         return button;
@@ -101,7 +105,7 @@ public class WorkPanelSearch extends JPanel {
     public String[] returnData() {
         return new String[]{
                 Objects.requireNonNull(byFabricante.getSelectedItem()).toString(),
-                Objects.requireNonNull(byRangoElectrico.getSelectedItem()).toString(),
+                Objects.requireNonNull(byRangoElectrico.getText()),
                 Objects.requireNonNull(byModeloDeVehiculo.getSelectedItem()).toString(),
         };
     }

@@ -20,6 +20,7 @@ public class WorkByState extends JPanel {
 
     private void initWorkPanel() {
         tableByDateAppointments = new Table();
+        tableByDateAppointments.createTable(new String[]{"Estado", "Cantidad de registros"});
         setBackground(Global.WORK_BACKGROUND_COLOR);
         setForeground(Global.WORK_TEXT_COLOR);
         createTitle();
@@ -28,6 +29,7 @@ public class WorkByState extends JPanel {
     private void createTable() {
         JScrollPane scrollPane = new JScrollPane(tableByDateAppointments.getTable());
         scrollPane.setPreferredSize(obtainSizeForTable());
+        setTableData();
         add(scrollPane, BorderLayout.CENTER);
     }
     private void createTitle() {

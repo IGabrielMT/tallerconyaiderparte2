@@ -1,7 +1,7 @@
 package juan.co.edu.uptc.views.mainpage;
 
 import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.views.tables.alltables.MainAll;
+import juan.co.edu.uptc.views.tables.byCity.MainByCity;
 import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;
@@ -50,7 +50,7 @@ public class HeaderPanel extends JPanel{
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                addAppointments();
+                addByCity();
             }
         });
         headerLabelsPanel.add(label);
@@ -74,8 +74,8 @@ public class HeaderPanel extends JPanel{
         button.addActionListener(e -> System.exit(0));
         headerLabelsPanel.add(button);
     }
-    private void addAppointments(){
-        MainAll mainAllAppointments = new MainAll(mainPageFrame, presenter);
-        mainAllAppointments.setVisible(true);
+    private void addByCity(){
+        MainByCity mainByCity = new MainByCity(mainPageFrame, presenter);
+        mainByCity.setVisible(true);
     }
 }

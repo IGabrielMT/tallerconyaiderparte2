@@ -11,14 +11,10 @@ public class Table {
     private JTable table;
 
     public Table() {
-        createTable();
+        createTable(new String[]{});
     }
-    private void createTable() {
-        String[] columnNames = {
-                "Estado", "Condado", "Ciudad",
-                "Modelo de vehiculo", "Fabricante", "Rango Electrico"
-        };
-        DefaultTableModel model = new DefaultTableModel(null, columnNames){
+    public void createTable(String[] columnNames) {
+        DefaultTableModel model = new DefaultTableModel(null, columnNames) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -43,5 +39,6 @@ public class Table {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0);
     }
+
 
 }

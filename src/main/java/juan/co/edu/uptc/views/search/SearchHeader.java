@@ -2,8 +2,8 @@ package juan.co.edu.uptc.views.search;
 
 
 import juan.co.edu.uptc.interfaces.Interfaces;
-import juan.co.edu.uptc.views.tables.alltables.MainAll;
 import juan.co.edu.uptc.views.mainpage.MainPageFrame;
+import juan.co.edu.uptc.views.tables.byCity.MainByCity;
 import juan.co.edu.uptc.views.wildCardClasses.CustomButton;
 import juan.co.edu.uptc.views.wildCardClasses.Global;
 import juan.co.edu.uptc.views.wildCardClasses.LabelHeader;
@@ -56,7 +56,7 @@ public class SearchHeader extends JPanel{
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createAppointments();
+                addByCity();
             }
         });
         headerLabelsPanel.add(label);
@@ -80,8 +80,8 @@ public class SearchHeader extends JPanel{
         headerLabelsPanel.add(button);
     }
 
-    private void createAppointments(){
-        MainAll mainAppointments = new MainAll(mainPageFrame, presenter);
-        mainAppointments.setVisible(true);
+    private void addByCity(){
+        MainByCity mainByCity = new MainByCity(mainPageFrame, presenter);
+        mainByCity.setVisible(true);
     }
 }

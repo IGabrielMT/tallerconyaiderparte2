@@ -7,16 +7,18 @@ import java.util.List;
 
 public interface Interfaces {
     interface Model {
-        List<Vehicle> ListByCountry_byState();
-        List<Vehicle> ListByCountry_byCountryQuantity();
-        List<String> ListByState();
-        List<String> ListByCity();
+        List<Vehicle> listByCountry_byState();
+        List<String> listByCountry_byCountryQuantity();
+        List<String> listByState();
+        List<String> listByCity();
         List<Vehicle> allVehicles();
+        List<String> getVehiclesModels();
+        List<String> getVehiclesManufacturers();
+        String countByModelManufacturerAndElectricRange(String model, String manufacturer, int electricRange);
     }
 
     interface View {
         void start();
-
         void setPresenter(Presenter presenter);
     }
 
@@ -26,13 +28,16 @@ public interface Interfaces {
         Object[][] obtainVehiclesBycity();
         Object[][] obtainVehiclesByCountry();
         Object[][] obtainVehiclesByState();
-
-        void registerAppointment(String[] strings);
-
         void setModel(Model model);
 
         void setView(View view);
 
         void start();
+
+        Object[] getVehicleModels();
+
+        Object[] getManufacters();
+
+        String countByModelManufacturerAndElectricRange(String model, String manufacturer, int electricRange);
     }
 }

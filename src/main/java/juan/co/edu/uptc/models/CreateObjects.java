@@ -32,8 +32,6 @@ public class CreateObjects {
         for (ArrayList<Object> vehicle : root.data) {
             stringToData(vehicle);
             cont++;
-            if (cont == 100)
-                break;
         }
     }
 

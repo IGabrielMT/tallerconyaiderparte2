@@ -9,8 +9,8 @@ public interface Interfaces {
     interface Model {
         List<Vehicle> ListByCountry_byState();
         List<Vehicle> ListByCountry_byCountryQuantity();
-        List<Vehicle> ListByState();
-        List<Vehicle> ListByCity();
+        List<String> ListByState();
+        List<String> ListByCity();
         List<Vehicle> allVehicles();
     }
 

@@ -21,15 +21,15 @@ import java.util.stream.Collectors;
 public class App {
     @SneakyThrows
     public static void main(String[] args) {
-        Interfaces.Presenter presenter = new Presenter();
-        Interfaces.Model model = new ListManagerVehicles();
-
-        presenter.setModel(model);
-
-        Interfaces.View view = new MainPageFrame();
-        view.setPresenter(presenter);
-        presenter.setView(view);
-        presenter.start();
-        view.start();
+//        Interfaces.Presenter presenter = new Presenter();
+//        Interfaces.Model model = new ListManagerVehicles();
+//
+//        presenter.setModel(model);
+//
+//        Interfaces.View view = new MainPageFrame();
+//        view.setPresenter(presenter);
+//        presenter.setView(view);
+//        presenter.start();
+//        view.start();
    }
 }
